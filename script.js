@@ -20,7 +20,7 @@ function toggleMode(){
         img.setAttribute('alt', 'imagem do Matheus, olhando para o lado esquerdo, usando um cabelo de samurai e imagem preto e branco')
      } else{
         // se não tiver light mode, adiciona a img light
-        img.setAttribute('src', './Stylss/Avatar.png')
+        img.setAttribute('src', '/Stylss/Avatar.png')
      }
 
 }
