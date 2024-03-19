@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{ /*o root é o html da pág index*/
+    --text-color:  #ffffff;
+    --bg-url: url(./Stylss/bg-mobile.jpg);
+    --borda: rgb(255, 255, 255, 0.5);
+    --background: rgba(255, 255, 255, 0.1);
+    --background-hover: rgba(255, 255, 255, 0.05);
+    --background-social-hover: rgb(255, 255, 255, 0.5);
+    --lua-sol: url(./Stylss/lua.svg);
+    --backgroud-switch: rgba(225, 255, 255, 0.1);
+}
+.light{
+    --text-color: black;
+    --bg-url: url(./Stylss/bg-mobile-light.jpg);
+    --borda: rgb(0, 0, 0, 0.5);
+    --background: rgba(0, 0, 0, 0.05);
+    --background-hover: rgb(0, 0, 0, 0.02);
+    --background-social-hover: rgb(0, 0, 0, 0.1);
+    --lua-sol: url(./Stylss/sol.svg);
+    --backgroud-switch: rgba(225, 255, 255, 0.5);
+}
+
+body{
+    /*
+        FORMA 1 / 1
+    background-image: url(/assets/Stylss/bg-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+        ORDEM DE LEITURA UNIDADA
+    background: color image repeat position/size
+    */
+
+    background: var(--bg-url) no-repeat top center/cover;
+}
+body *{
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+}
+
+#conteiner{
+    width: 100%;
+    max-width: 588px;
+    margin: 56px auto 0px;
+    /*
+        Margin | Alinhar divs Block
+    "margin: auto;" = Só funciona no display block onde, divide em partes iguais a esquede e a direita onde será aplicado a magin
+    */
+    /*
+        Text-align | Alinhar divs inline
+    "text-aling: posição;" = O mesmo é usando em divis pais e filhos para realizar o alinhamento dos elementos.
+    */
+
+    padding: 24px;
+}
+#profile img{
+    width: 112px;
+    display: block;
+    margin: auto;
+}
+#profile p{
+    text-align: center;
+    font-size: 16px; /*Por padrão todos os navegadores são 16px*/
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+#switch{
+    position: relative;
+    width: 64px;
+
+    margin: 8px auto;
+}
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--lua-sol) no-repeat center;
+    border: none;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.light #switch button{
+    right: 0;
+    left: inherit;
+}
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--backgroud-switch);
+    border-radius: 9999px;
+}
+
+#menu{
+    padding: 24px 0px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+ul li{
+    border: solid 1px var(--borda);
+    background: var(--background);
+    padding: 16px 24px;
+    border-radius: 8px;
+
+    transition: background 0.2s;
+
+}
+ul li a{
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    font-weight: 500;
+}
+ul li:hover{
+    border: solid 1.5px var(--text-color);
+    background: var(--background-hover);
+}
+#social-links{
+    display: flex;
+    justify-content: center;
+    padding: 24px 0px;
+}
+#social-links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+#social-links a:hover{
+background: var(--background-social-hover);
+}
+footer{
+    text-align: center;
+    padding: 24px 0px;
+    font-size: 14px;
+}
+
+@media (min-width: 700px){
+    :root{
+        --bg-url: url(./Stylss/bg-desktop.jpg);
+    }
+    .light{
+        --bg-url: url(./Stylss/Background-desktop-light.jpg);
+    }
+}
